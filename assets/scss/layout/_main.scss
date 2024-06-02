@@ -1,0 +1,43 @@
+@use "../foundation/global" as *;
+
+.l-wrapper {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+
+    &__inner {
+        width: 80vw;
+        height: 100%;
+
+        @include breakpoint(m) {
+            width: 100vw;
+            height: 100%;
+        }
+    }
+}
+
+.l-main {
+    background-color: $bg-main;
+}
+
+.l-contents {
+    &--first {
+        margin: 0 7.5rem;
+
+        @include breakpoint(m) {
+            margin: 0 2.5rem;
+        }
+
+        @include breakpoint(s) {
+            margin: 0 1.25rem;
+        }
+    }
+
+    &--subsequent {
+        margin: 0 6.25rem;
+
+        @include breakpoint(s) {
+            margin: 0 1.25rem;
+        }
+    }
+}

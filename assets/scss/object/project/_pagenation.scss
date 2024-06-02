@@ -1,0 +1,52 @@
+@use "../../foundation/global" as *;
+
+//ページネーション
+
+.p-pagenation {
+    margin-bottom: 64px;
+    flex-wrap: wrap;
+
+    @include breakpoint(m) {
+        margin-bottom: 32px;
+    }
+
+    &__contents {
+        @include breakpoint(s) {
+            margin: 0 2rem;
+        }
+    }
+
+    &__item {
+        color: $primary-color;
+    }
+
+    &__item:not(:last-child) {
+        padding-right: 0.938rem;
+    }
+
+    &__item:nth-child(3) {
+        @include breakpoint(s) {
+            padding-right: 60%;
+        }
+    }
+
+    &__page {
+        border: 1px solid $primary-color;
+        width: 35px;
+        height: 35px;
+        color: $primary-color;
+
+        @include breakpoint(m) {
+            margin-right: 0.938rem;
+        }
+    }
+
+    &__page:not(:last-child) {
+        margin-right: 0.938rem;
+    }
+
+    &__page:first-child {
+        background-color: $container-card;
+        color: white;
+    }
+}

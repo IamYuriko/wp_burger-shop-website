@@ -1,0 +1,28 @@
+@use "../foundation/global" as *;
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    @include secondary-normal;
+    color: $secondary-color;
+}
+
+iframe {
+    vertical-align: bottom;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
