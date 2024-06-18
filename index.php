@@ -1,31 +1,9 @@
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Hamburger</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="サイトの説明文が入ります">
-    <link rel="icon" href="./images/favicon.ico">
-    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700&family=Roboto:wght@700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="js/script.js"></script>
-</head>
+<?php get_header(); ?>
 
 <body>
     <div class="l-wrapper">
         <div class="l-wrapper__inner">
             <div class="p-overlay-hamburgerMenu"></div>
-            <div class="headerContainer"></div>
-            <script>header('./');</script>
             <main class="l-main">
                 <article class="l-main__inner">
                     <section class="p-fv-front c-mv c-mv-front">
@@ -103,11 +81,7 @@
                 </article>
             </main>
         </div>
-        <div class="sidebarContainer"></div>
-        <script>sidebar('./');</script>
+        <?php get_sidebar(); ?>
     </div>
-    <div class="footerContainer"></div>
-    <script>footer('./');</script>
+    <?php get_footer(); ?>
 </body>
-
-</html>

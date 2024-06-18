@@ -3,7 +3,7 @@
 .l-sidebar {
     background-color: $bg-sideMenu;
     width: 20vw;
-    height: 100vh;
+    height: auto;
     min-height: 100%;
 
     @include breakpoint(m) {
