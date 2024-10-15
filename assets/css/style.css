@@ -9,6 +9,7 @@ body {
   font-family: "M PLUS 1p", sans-serif;
   font-weight: 400;
   color: #3C2A10;
+  background-color: #FFFDFA;
 }
 
 iframe {
@@ -90,10 +91,9 @@ li {
   }
 }
 
-.l-main {
-  background-color: #FFFDFA;
-}
-
+/* .l-main {
+    background-color: $bg-main;
+} */
 .l-contents--first {
   margin: 0 7.5rem; /*以下は画面幅が1024px以上になったら適応される*/
   /*以下は画面幅が0~1024pxで適応される*/
@@ -127,7 +127,7 @@ li {
 .l-sidebar {
   background-color: #F2EDE9;
   width: 20vw;
-  height: 100vh;
+  height: auto;
   min-height: 100%;
   /*以下は画面幅が1024px以上になったら適応される*/
   /*以下は画面幅が0~1024pxで適応される*/
@@ -141,6 +141,7 @@ li {
     right: -90%;
     overflow: scroll;
     transition: 0.3s ease-out;
+    overflow-x: hidden;
   }
   .l-sidebar.is-active {
     position: fixed;
@@ -152,14 +153,24 @@ li {
   }
 }
 .l-sidebar__inner {
-  padding: 5.25rem 7.563rem 96.188rem 2.875rem;
+  padding: 5.25rem 6rem 2.875rem;
   /*以下は画面幅が1024px以上になったら適応される*/
   /*以下は画面幅が0~1024pxで適応される*/
   /*以下は画面幅が0~768px以下になったら適応される*/
 }
+@media only screen and (max-width: 1650px) {
+  .l-sidebar__inner {
+    padding-left: 3rem;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .l-sidebar__inner {
+    padding-left: 0.5rem;
+  }
+}
 @media (max-width: 1024px) {
   .l-sidebar__inner {
-    padding: 0 7.563rem 96.188rem 2.875rem;
+    padding: 0 6rem 2.875rem;
   }
 }
 
@@ -188,6 +199,13 @@ li {
 .l-footer__item {
   font-size: 2rem;
 }
+.l-footer__item a {
+  color: white;
+}
+.l-footer__item a:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
 .l-footer__item:first-of-type {
   padding-right: 10px;
 }
@@ -195,13 +213,6 @@ li {
   border-left: 2px solid white;
   line-height: 2rem;
   padding-left: 10px;
-}
-.l-footer__link {
-  color: white;
-}
-.l-footer__link:hover {
-  opacity: 0.7;
-  transition: 0.3s;
 }
 .l-footer__copyright {
   color: white;
@@ -450,8 +461,16 @@ li {
   font-weight: 700;
   font-size: 2.4rem;
 }
+.c-list__title a {
+  padding-bottom: 32px;
+  display: block;
+}
 .c-list__item {
   font-size: 2rem;
+  font-weight: 400;
+}
+.c-list__item a {
+  padding-bottom: 20px;
 }
 .c-list__link:hover {
   opacity: 0.7;
@@ -589,7 +608,7 @@ li {
 @media (max-width: 1024px) {
   .p-sideMenu__closeBtn {
     display: block;
-    width: 35px;
+    width: 45px;
     height: 35px;
     top: 5px;
     left: 115%;
@@ -630,74 +649,192 @@ li {
 .p-sideMenu__list {
   padding-bottom: 32px;
 }
-.p-sideMenu__list:not(:first-child) {
-  padding-top: 48px;
+.p-sideMenu__list a {
+  color: #707070;
+}
+.p-sideMenu__list a:hover {
+  opacity: 0.7;
 }
 .p-sideMenu__item {
   padding-left: 20px;
 }
-.p-sideMenu__item:not(:last-child) {
-  padding-bottom: 20px;
-}
 
-.p-pagenation {
-  margin-bottom: 64px;
-  flex-wrap: wrap;
+/* .p-pagenation {
+    margin-bottom: 64px;
+    flex-wrap: wrap;
+
+    @include breakpoint(m) {
+        margin-bottom: 32px;
+    }
+
+    &__contents {
+        @include breakpoint(s) {
+            margin: 0 2rem;
+        }
+    }
+
+    &__item {
+        color: $primary-color;
+    }
+
+    &__item:not(:last-child) {
+        padding-right: 0.938rem;
+    }
+
+    &__item:nth-child(3) {
+        @include breakpoint(s) {
+            padding-right: 60%;
+        }
+    }
+
+    &__page {
+        border: 1px solid $primary-color;
+        width: 35px;
+        height: 35px;
+        color: $primary-color;
+
+        @include breakpoint(m) {
+            margin-right: 0.938rem;
+        }
+    }
+
+    &__page:not(:last-child) {
+        margin-right: 0.938rem;
+    }
+
+    &__page:first-child {
+        background-color: $container-card;
+        color: white;
+    }
+} 
+*/
+.wp-pagenavi {
+  padding-bottom: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  margin-top: 150px;
+  /*以下は画面幅が1024px以上になったら適応される*/
+  /*以下は画面幅が0~1024pxで適応される*/
+  /*以下は画面幅が0~768px以下になったら適応される*/
   /*以下は画面幅が1024px以上になったら適応される*/
   /*以下は画面幅が0~1024pxで適応される*/
   /*以下は画面幅が0~768px以下になったら適応される*/
 }
 @media (max-width: 1024px) {
-  .p-pagenation {
-    margin-bottom: 32px;
+  .wp-pagenavi {
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: 700;
+    padding-bottom: 32px;
+    justify-content: space-between;
+    margin-top: 106.5px;
   }
 }
-.p-pagenation__contents {
+@media (max-width: 768px) {
+  .wp-pagenavi {
+    margin-top: 71.55px;
+  }
+}
+.wp-pagenavi .pages {
+  color: #707070;
+  padding-right: 1.5rem;
   /*以下は画面幅が1024px以上になったら適応される*/
   /*以下は画面幅が0~1024pxで適応される*/
   /*以下は画面幅が0~768px以下になったら適応される*/
 }
-@media (max-width: 768px) {
-  .p-pagenation__contents {
-    margin: 0 2rem;
+@media (max-width: 1024px) {
+  .wp-pagenavi .pages {
+    display: none;
   }
 }
-.p-pagenation__item {
+.wp-pagenavi .nextpostslink, .wp-pagenavi .previouspostslink {
   color: #707070;
 }
-.p-pagenation__item:not(:last-child) {
-  padding-right: 0.938rem;
-}
-.p-pagenation__item:nth-child(3) {
+.wp-pagenavi a:not(:last-child) {
   /*以下は画面幅が1024px以上になったら適応される*/
   /*以下は画面幅が0~1024pxで適応される*/
   /*以下は画面幅が0~768px以下になったら適応される*/
 }
-@media (max-width: 768px) {
-  .p-pagenation__item:nth-child(3) {
-    padding-right: 60%;
+@media (min-width: 1024px) {
+  .wp-pagenavi a:not(:last-child) {
+    margin-right: 0.938rem;
   }
 }
-.p-pagenation__page {
+.wp-pagenavi .nextpostslink {
+  /*以下は画面幅が1024px以上になったら適応される*/
+  /*以下は画面幅が0~1024pxで適応される*/
+  /*以下は画面幅が0~768px以下になったら適応される*/
+}
+@media (max-width: 1024px) {
+  .wp-pagenavi .nextpostslink {
+    margin-left: auto;
+  }
+}
+.wp-pagenavi .smaller, .wp-pagenavi .larger {
   border: 1px solid #707070;
   width: 35px;
   height: 35px;
   color: #707070;
+  display: grid;
+  place-items: center;
   /*以下は画面幅が1024px以上になったら適応される*/
   /*以下は画面幅が0~1024pxで適応される*/
   /*以下は画面幅が0~768px以下になったら適応される*/
 }
 @media (max-width: 1024px) {
-  .p-pagenation__page {
-    margin-right: 0.938rem;
+  .wp-pagenavi .smaller, .wp-pagenavi .larger {
+    display: none;
   }
 }
-.p-pagenation__page:not(:last-child) {
-  margin-right: 0.938rem;
-}
-.p-pagenation__page:first-child {
+.wp-pagenavi .current {
+  border: 1px solid #707070;
   background-color: #3C2B1C;
   color: white;
+  width: 35px;
+  height: 35px;
+  margin-right: 0.938rem;
+  display: grid;
+  place-items: center;
+  /*以下は画面幅が1024px以上になったら適応される*/
+  /*以下は画面幅が0~1024pxで適応される*/
+  /*以下は画面幅が0~768px以下になったら適応される*/
+}
+@media (max-width: 1024px) {
+  .wp-pagenavi .current {
+    display: none;
+  }
+}
+
+.nextpostslink::before {
+  /*以下は画面幅が1024px以上になったら適応される*/
+  /*以下は画面幅が0~1024pxで適応される*/
+  /*以下は画面幅が0~768px以下になったら適応される*/
+}
+@media (max-width: 1024px) {
+  .nextpostslink::before {
+    content: "次へ";
+    padding-right: 5px;
+    white-space: nowrap;
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: 700;
+  }
+}
+
+.previouspostslink::after {
+  /*以下は画面幅が1024px以上になったら適応される*/
+  /*以下は画面幅が0~1024pxで適応される*/
+  /*以下は画面幅が0~768px以下になったら適応される*/
+}
+@media (max-width: 1024px) {
+  .previouspostslink::after {
+    content: "前へ";
+    padding-left: 5px;
+    white-space: nowrap;
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: 700;
+  }
 }
 
 .p-menu {
@@ -1215,10 +1352,10 @@ li {
 
 .p-code {
   background-color: #F5F5F5;
-  min-height: 237px;
+  /* min-height: 237px; */
   height: auto;
   padding: 3.125rem 3.75rem 3.125rem 3.125px;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
   /*以下は画面幅が1024px以上になったら適応される*/
   /*以下は画面幅が0~1024pxで適応される*/
   /*以下は画面幅が0~768px以下になったら適応される*/
@@ -1237,11 +1374,15 @@ li {
   }
 }
 
+code {
+  padding-left: 50px;
+}
+
 .p-table {
   border-collapse: collapse;
   background-color: white;
   width: 100%;
-  min-height: 381px;
+  /* min-height: 381px; */
   height: auto;
   table-layout: fixed;
   margin-bottom: 60px;
@@ -1274,6 +1415,13 @@ li {
   }
 }
 
+.wp-block-button__link {
+  color: inherit;
+  background-color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+
 .p-highlightText {
   padding-bottom: 277px;
   /*以下は画面幅が1024px以上になったら適応される*/
@@ -1297,9 +1445,9 @@ li {
 .p-quote {
   background-color: #F5F5F5;
   padding: 50px 60px 47px 50px;
-  min-height: 319px;
+  /* min-height: 319px; */
   height: auto;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
   /*以下は画面幅が1024px以上になったら適応される*/
   /*以下は画面幅が0~1024pxで適応される*/
   /*以下は画面幅が0~768px以下になったら適応される*/
@@ -1330,6 +1478,13 @@ li {
 }
 .p-orderedList__list:nth-child(2) {
   padding-left: 2rem;
+}
+
+.wp-block-list {
+  padding-left: 2rem;
+}
+.wp-block-list li {
+  list-style-type: unset !important;
 }
 
 .p-unorderedList {
@@ -1389,6 +1544,7 @@ li {
   }
 }
 .p-card__contents {
+  min-height: 471px;
   grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
 }
 .p-card__container {
@@ -1486,6 +1642,28 @@ li {
     -webkit-animation-timing-function: ease-out;
             animation-timing-function: ease-out;
   }
+}
+
+.p-page404 {
+  padding: 200px 0;
+  text-align: center;
+}
+.p-page404__title {
+  font-size: 5rem;
+}
+.p-page404__button {
+  display: block;
+  background-color: #3C2A10;
+  color: #FFFDFA;
+  width: 300px;
+  border-radius: 20px;
+  margin: 50px auto;
+  padding: 20px;
+  cursor: pointer;
+  font-size: unset;
+}
+.p-page404__button:hover {
+  opacity: 0.9;
 }
 
 .u-mb117px {

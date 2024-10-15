@@ -2,7 +2,7 @@
 <main class="l-main">
     <article class="l-main__inner">
         <section class="p-fv-front c-mv c-mv-front">
-            <h2 class="p-fv-front__title c-heading c-heading--xxl">ダミーサイト</h2>
+            <h2 class="p-fv-front__title c-heading c-heading--xxl"><?php echo bloginfo('description'); ?></h2>
         </section>
         <div class="l-contents--first">
             <div class="p-menu">
@@ -13,16 +13,29 @@
                                 Out</h2>
                             <span class="p-menu__line c-line c-line--m"></span>
                         </section>
+                        <!-- <?php
+                                // Define arguments for wp_nav_menu
+                                $menu_args = array(
+                                    'menu' => 'takeoutmenu',  // Replace with your menu name
+                                    'container' => false,
+                                    'menu_class' => 'p-menu__container',  // CSS class for the menu ul element
+                                );
+
+                                // Display the custom menu
+                                wp_nav_menu($menu_args);
+                                ?> -->
+
                         <div class="p-menu__contents">
-                            <a class="p-menu__link" href="/">
+                            <a class="p-menu__link" href="<?php echo esc_url(get_category_link(get_cat_ID('Take Out'))); ?>">
                                 <dl class="p-menu__container">
-                                    <dt class="p-menu__subtitle c-heading c-heading--sm">Take Out</dt>
+                                    <dt class="p-menu__subtitle c-heading c-heading--sm">
+                                        Take Out</dt>
                                     <dd class="p-menu__text">
                                         当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで
                                     </dd>
                                 </dl>
                             </a>
-                            <a class="p-menu__link" href="/">
+                            <a class="p-menu__link" href="<?php echo esc_url(get_category_link(get_cat_ID('Take Out'))); ?>">
                                 <dl class="p-menu__container">
                                     <dt class="p-menu__subtitle c-heading c-heading--sm">Take Out</dt>
                                     <dd class="p-menu__text">
@@ -31,14 +44,26 @@
                                 </dl>
                             </a>
                         </div>
+
                     </div>
                     <div class="p-menu__eatIn c-bgImage c-bgImage--eatIn c-flex c-flex--column">
                         <section class="p-menu__wrapper">
                             <h2 class="p-menu__title c-title c-title--xl">Eat In</h2>
                             <span class="p-menu__line c-line c-line--m"></span>
                         </section>
+                        <!-- <?php
+                                // Define arguments for wp_nav_menu
+                                $menu_args = array(
+                                    'menu' => 'eatinmenu',  // Replace with your menu name
+                                    'container' => false,
+                                    'menu_class' => 'p-menu__container',  // CSS class for the menu ul element
+                                );
+
+                                // Display the custom menu
+                                wp_nav_menu($menu_args);
+                                ?> -->
                         <div class="p-menu__contents">
-                            <a class="p-menu__link" href="/">
+                            <a class="p-menu__link" href="<?php echo esc_url(get_category_link(get_cat_ID('Eat In'))); ?>">
                                 <dl class="p-menu__container">
                                     <dt class="p-menu__subtitle c-heading c-heading--sm">Eat In</dt>
                                     <dd class="p-menu__text">
@@ -46,7 +71,7 @@
                                     </dd>
                                 </dl>
                             </a>
-                            <a class="p-menu__link" href="/">
+                            <a class="p-menu__link" href="<?php echo esc_url(get_category_link(get_cat_ID('Eat In'))); ?>">
                                 <dl class="p-menu__container">
                                     <dt class="p-menu__subtitle c-heading c-heading--sm">Eat In</dt>
                                     <dd class="p-menu__text">
@@ -59,14 +84,17 @@
                 </div>
             </div>
         </div>
+        <?php
+        $access_section_data = get_access_section_data(get_the_ID());
+        ?>
         <div class="p-location c-grid">
             <div class="p-location__overlay c-grid__item--1of1 u-hide--tab u-show--sp"></div>
-            <iframe class="p-location__map c-grid__item--1of1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7940.257969910845!2d24.947603155802344!3d60.163111194369456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920ba1bee8b043%3A0x5a6617ba9d4a124b!2sHesburger%20Helsinki%20Mannerheimintie%208!5e0!3m2!1sja!2sjp!4v1713953867062!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe class="p-location__map c-grid__item--1of1" src="<?php echo esc_html($access_section_data['map']); ?>" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <section class="p-location__container c-grid__item--1of1">
-                <h2 class="p-location__title c-heading c-heading--xl">見出しが入ります</h2>
+                <h2 class="p-location__title c-heading c-heading--xl"><?php echo esc_html($access_section_data['title']); ?></h2>
                 <span class="p-location__line c-line c-line--l"></span>
                 <p class="p-location__text c-heading">
-                    テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入
+                    <?php echo esc_html($access_section_data['description']); ?>
                 </p>
             </section>
         </div>

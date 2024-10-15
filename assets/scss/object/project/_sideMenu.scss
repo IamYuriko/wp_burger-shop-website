@@ -9,7 +9,7 @@
     &__closeBtn {
         @include breakpoint(m) {
             display: block;
-            width: 35px;
+            width: 45px;
             height: 35px;
             top: 5px;
             left: 115%;
@@ -55,17 +55,16 @@
 
     &__list {
         padding-bottom: 32px;
-
-        &:not(:first-child) {
-            padding-top: 48px;
+        a{
+            color: $primary-color;
+            
+            &:hover{
+            opacity: .7;
+            }
         }
     }
 
     &__item {
         padding-left: 20px;
-
-        &:not(:last-child) {
-            padding-bottom: 20px;
-        }
     }
 }

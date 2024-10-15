@@ -1,0 +1,23 @@
+@use "../../foundation/global" as *;
+
+.p-page404 {
+    padding: 200px 0;
+    text-align: center;
+    &__title {
+        font-size: 5rem;
+    }
+    &__button {
+        display: block;
+        background-color: $secondary-color;
+        color: $bg-main;
+        width: 300px;
+        border-radius: 20px;
+        margin: 50px auto;
+        padding: 20px;
+        cursor: pointer;
+        font-size: unset;
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+}

@@ -5,7 +5,7 @@
     list-style-position: inside;
 
     &__item {
-        list-style-type: decimal;
+        list-style-type: decimal; 
     }
 
     &__list:not(:last-child) {
@@ -14,5 +14,14 @@
 
     &__list:nth-child(2) {
         padding-left: 2rem;
+    }
+}
+
+
+.wp-block-list {
+    padding-left: 2rem;
+
+    li{
+        list-style-type: unset !important; 
     }
 }

@@ -1,14 +1,17 @@
 <footer class="l-footer">
     <div class="l-footer__inner">
         <div class="l-footer__contents">
-            <ul class="l-footer__menu c-flex c-flex--center">
-                <li class="l-footer__item">
-                    <a class="l-footer__link" href="<?php echo esc_url(home_url('/')); ?>page/">ショップ情報</a>
-                </li>
-                <li class="l-footer__item">
-                    <a class="l-footer__link" href="<?php echo esc_url(home_url('/')); ?>page/">ヒストリー</a>
-                </li>
-            </ul>
+            <?php
+            // Define arguments for wp_nav_menu
+            $menu_args = array(
+                'menu' => 'footermenu',  // Replace with your menu name
+                'container' => false,
+                'menu_class' => 'l-footer__menu c-flex c-flex--center',  // CSS class for the menu ul element
+            );
+
+            // Display the custom menu
+            wp_nav_menu($menu_args);
+            ?>
             <p class="l-footer__copyright"><small>Copyright: RaiseTech</small></p>
         </div>
     </div>

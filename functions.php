@@ -18,8 +18,80 @@ function my_stylesheets()
         '//ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js',
         array(),
         '3.7.1',
-        false,
+        true,
     );
-    wp_enqueue_script('myscript', get_theme_file_uri('/assets/js/script.js'), array('jquery'), '1.0.0', false);
+    wp_enqueue_script('myscript', get_theme_file_uri('/assets/js/script.js'), array('jquery'), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'my_stylesheets');
+
+function my_setup()
+{
+    add_theme_support('menus'); /*メニュー*/
+    add_theme_support('post-thumbnails'); /* アイキャッチ画像 */
+    add_theme_support('automatic-feed-links'); /* RSSフィード */
+    add_theme_support('title-tag'); /* タイトルタグ自動生成 */
+    add_theme_support('custom-background'); /*背景を管理画面から変更*/
+    add_theme_support('custom-header'); /*ヘッダー画像を管理画面から変更*/
+    add_theme_support('editor-style'); /*エディターでスタイル変更*/
+    add_theme_support('html5', array( /* HTML5のタグで出力 */
+        'search-form',
+        'comment-form',
+        'comment-list',
+        'gallery',
+        'caption',
+    ));
+}
+add_action('after_setup_theme', 'my_setup');
+
+
+//カスタムフィールドでフロントページ内マップ部分（アクセス）を管理
+function get_access_section_data($post_id)
+{
+    return [
+        'title' => get_post_meta($post_id, 'access_title', true),
+        'description' => get_post_meta($post_id, 'access_description', true),
+        'map' => get_post_meta($post_id, 'access_map', true),
+    ];
+}
+
+
+//カードのカスタムフィールド
+function add_card_section_data()
+{
+    add_meta_box(
+        'card_section_data', //セクションのID
+        '商品情報', //セクションのタイトル
+        'insert_card_section_data', //入力エリアの HTML
+        'post',  //投稿タイプの場合は「post」、カスタム投稿タイプの場合は「スラッグ名」、固定ページの場合は「page」
+        'normal', //カスタムフィールドが表示される場所
+        'high' //優先度
+    );
+}
+add_action('admin_menu', 'add_card_section_data');
+
+//カスタムフィールドの入力エリア
+function insert_card_section_data()
+{
+    global $post;
+    echo 'タイトル： <input type="text" name="card_title" value="' . get_post_meta($post->ID, 'card_title', true) . '" size="50" style="margin-bottom: 10px;" />　<br>';
+    echo 'テキスト： <input type="text" name="card_desc" value="' . get_post_meta($post->ID, 'card_desc', true) . '" size="50" style="margin-bottom: 10px;" />　<br>';
+}
+
+
+//カスタムフィールドの値を保存
+function save_card_section_data($post_id)
+{
+
+    if (!empty($_POST['card_title'])) {
+        update_post_meta($post_id, 'card_title', $_POST['card_title']);
+    } else {
+        delete_post_meta($post_id, 'card_title');
+    }
+
+    if (!empty($_POST['card_desc'])) {
+        update_post_meta($post_id, 'card_desc', $_POST['card_desc']);
+    } else {
+        delete_post_meta($post_id, 'card_desc');
+    }
+}
+add_action('save_post', 'save_card_section_data');

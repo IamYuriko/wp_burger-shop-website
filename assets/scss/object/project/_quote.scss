@@ -5,9 +5,7 @@
 .p-quote {
     background-color: $bg-quote;
     padding: 50px 60px 47px 50px;
-    min-height: 319px;
     height: auto;
-    margin-bottom: 60px;
 
     @include breakpoint(s) {
         margin-bottom: 30px;
