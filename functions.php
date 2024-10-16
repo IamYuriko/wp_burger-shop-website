@@ -95,3 +95,59 @@ function save_card_section_data($post_id)
     }
 }
 add_action('save_post', 'save_card_section_data');
+
+
+
+function wp_navtag_remove($var)
+{
+    if (is_array($var)) {
+        return array_intersect($var, array(
+            'l-footer__item',
+            'p-sideMenu__list',
+            'p-sideMenu__item'
+        ));
+    }
+    return ''; // 配列でない場合は空文字を返す
+}
+
+add_filter('nav_menu_css_class', 'wp_navtag_remove', 100, 1);
+add_filter('nav_menu_item_id', '__return_empty_string', 100); // メニューアイテムのIDを空にする
+
+
+// wp_nav_menuの<li>にクラスを追加する関数
+function add_class_on_li($classes, $item, $args)
+{
+    // フッターメニュー用のクラスを追加
+    if (isset($args->footer_li_class)) {
+        $classes[] = $args->footer_li_class;
+    }
+
+    // サイドメニュー用のクラスを追加
+    if (isset($args->sideMenu_li_class) && !$item->menu_item_parent) {
+        $classes[] = $args->sideMenu_li_class;
+    }
+
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'add_class_on_li', 10, 3);
+
+// サブメニューにクラスを追加する関数
+function add_class_on_submenu_li($classes, $item, $args)
+{
+    if (isset($args->submenu_li_class) && $item->menu_item_parent) {
+        $classes[] = $args->submenu_li_class;
+    }
+    return $classes;
+}
+add_filter('nav_menu_submenu_css_class', 'add_class_on_submenu_li', 10, 3);
+
+
+// wp_nav_menuの<a>にクラスを追加する関数
+function add_class_on_a($atts, $item, $args)
+{
+    if (isset($args->a_class)) {
+        $atts[] = $args->a_class;
+    }
+    return $atts;
+}
+add_filter('nav_menu_link_attributes', 'add_class_on_a', 10, 3);

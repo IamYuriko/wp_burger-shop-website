@@ -10,6 +10,7 @@ body {
   font-weight: 400;
   color: #3C2A10;
   background-color: #FFFDFA;
+  overflow-x: hidden;
 }
 
 iframe {
@@ -91,11 +92,9 @@ li {
   }
 }
 
-/* .l-main {
-    background-color: $bg-main;
-} */
 .l-contents--first {
-  margin: 0 7.5rem; /*以下は画面幅が1024px以上になったら適応される*/
+  margin: 0 7.5rem;
+  /*以下は画面幅が1024px以上になったら適応される*/
   /*以下は画面幅が0~1024pxで適応される*/
   /*以下は画面幅が0~768px以下になったら適応される*/
   /*以下は画面幅が1024px以上になったら適応される*/
@@ -153,7 +152,7 @@ li {
   }
 }
 .l-sidebar__inner {
-  padding: 5.25rem 6rem 2.875rem;
+  padding: 5.25rem 6rem 50rem 2.875rem;
   /*以下は画面幅が1024px以上になったら適応される*/
   /*以下は画面幅が0~1024pxで適応される*/
   /*以下は画面幅が0~768px以下になったら適応される*/
@@ -170,7 +169,7 @@ li {
 }
 @media (max-width: 1024px) {
   .l-sidebar__inner {
-    padding: 0 6rem 2.875rem;
+    padding: 0 6rem 50rem 2.875rem;
   }
 }
 
@@ -659,55 +658,6 @@ li {
   padding-left: 20px;
 }
 
-/* .p-pagenation {
-    margin-bottom: 64px;
-    flex-wrap: wrap;
-
-    @include breakpoint(m) {
-        margin-bottom: 32px;
-    }
-
-    &__contents {
-        @include breakpoint(s) {
-            margin: 0 2rem;
-        }
-    }
-
-    &__item {
-        color: $primary-color;
-    }
-
-    &__item:not(:last-child) {
-        padding-right: 0.938rem;
-    }
-
-    &__item:nth-child(3) {
-        @include breakpoint(s) {
-            padding-right: 60%;
-        }
-    }
-
-    &__page {
-        border: 1px solid $primary-color;
-        width: 35px;
-        height: 35px;
-        color: $primary-color;
-
-        @include breakpoint(m) {
-            margin-right: 0.938rem;
-        }
-    }
-
-    &__page:not(:last-child) {
-        margin-right: 0.938rem;
-    }
-
-    &__page:first-child {
-        background-color: $container-card;
-        color: white;
-    }
-} 
-*/
 .wp-pagenavi {
   padding-bottom: 64px;
   display: flex;
@@ -739,8 +689,7 @@ li {
 }
 .wp-pagenavi .pages {
   color: #707070;
-  padding-right: 1.5rem;
-  /*以下は画面幅が1024px以上になったら適応される*/
+  padding-right: 1.5rem; /*以下は画面幅が1024px以上になったら適応される*/
   /*以下は画面幅が0~1024pxで適応される*/
   /*以下は画面幅が0~768px以下になったら適応される*/
 }
@@ -1352,10 +1301,8 @@ li {
 
 .p-code {
   background-color: #F5F5F5;
-  /* min-height: 237px; */
   height: auto;
   padding: 3.125rem 3.75rem 3.125rem 3.125px;
-  /* margin-bottom: 50px; */
   /*以下は画面幅が1024px以上になったら適応される*/
   /*以下は画面幅が0~1024pxで適応される*/
   /*以下は画面幅が0~768px以下になったら適応される*/
@@ -1382,7 +1329,6 @@ code {
   border-collapse: collapse;
   background-color: white;
   width: 100%;
-  /* min-height: 381px; */
   height: auto;
   table-layout: fixed;
   margin-bottom: 60px;
@@ -1445,9 +1391,7 @@ code {
 .p-quote {
   background-color: #F5F5F5;
   padding: 50px 60px 47px 50px;
-  /* min-height: 319px; */
   height: auto;
-  /* margin-bottom: 60px; */
   /*以下は画面幅が1024px以上になったら適応される*/
   /*以下は画面幅が0~1024pxで適応される*/
   /*以下は画面幅が0~768px以下になったら適応される*/

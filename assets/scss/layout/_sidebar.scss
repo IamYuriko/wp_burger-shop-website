@@ -28,7 +28,7 @@
 
 
     &__inner {
-        padding: 5.25rem 6rem 2.875rem;
+        padding: 5.25rem 6rem 50rem 2.875rem;
 
         @media only screen and (max-width: 1650px){
             padding-left: 3rem;
@@ -39,7 +39,7 @@
         }
 
         @include breakpoint(m) {
-            padding: 0 6rem 2.875rem;
+            padding: 0 6rem 50rem 2.875rem;
         }
     }
 }
