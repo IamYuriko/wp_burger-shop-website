@@ -36,4 +36,12 @@
             margin: 0 1.25rem;
         }
     }
+
+    &--single {
+        margin: 0 6.25rem 30rem 6.25rem;
+
+        @include breakpoint(s) {
+            margin: 0 1.25rem 30rem 1.25rem;
+        }
+    }
 }

@@ -122,6 +122,17 @@ li {
     margin: 0 1.25rem;
   }
 }
+.l-contents--single {
+  margin: 0 6.25rem 30rem 6.25rem;
+  /*以下は画面幅が1024px以上になったら適応される*/
+  /*以下は画面幅が0~1024pxで適応される*/
+  /*以下は画面幅が0~768px以下になったら適応される*/
+}
+@media (max-width: 768px) {
+  .l-contents--single {
+    margin: 0 1.25rem 30rem 1.25rem;
+  }
+}
 
 .l-sidebar {
   background-color: #F2EDE9;
@@ -152,7 +163,7 @@ li {
   }
 }
 .l-sidebar__inner {
-  padding: 5.25rem 6rem 50rem 2.875rem;
+  padding: 5.25rem 6rem 2.875rem;
   /*以下は画面幅が1024px以上になったら適応される*/
   /*以下は画面幅が0~1024pxで適応される*/
   /*以下は画面幅が0~768px以下になったら適応される*/
@@ -169,7 +180,7 @@ li {
 }
 @media (max-width: 1024px) {
   .l-sidebar__inner {
-    padding: 0 6rem 50rem 2.875rem;
+    padding: 0 6rem 2.875rem;
   }
 }
 

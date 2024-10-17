@@ -5,7 +5,7 @@
         <section class="p-fv-single c-mv c-mv-single">
             <h1 class="p-fv-single__title c-heading c-heading--xxxl"><?php the_title(); ?></h1>
         </section>
-        <div class="l-contents--subsequent">
+        <div class="l-contents--single">
             <?php if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post();
                     the_content();
