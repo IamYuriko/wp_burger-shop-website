@@ -112,14 +112,14 @@ li {
   }
 }
 .l-contents--subsequent {
-  margin: 0 6.25rem;
+  margin: 0 6.25rem 5rem 6.25rem;
   /*以下は画面幅が1024px以上になったら適応される*/
   /*以下は画面幅が0~1024pxで適応される*/
   /*以下は画面幅が0~768px以下になったら適応される*/
 }
 @media (max-width: 768px) {
   .l-contents--subsequent {
-    margin: 0 1.25rem;
+    margin: 0 1.25rem 5rem 1.25rem;
   }
 }
 .l-contents--single {
@@ -688,7 +688,6 @@ li {
 }
 
 .wp-pagenavi {
-  padding-bottom: 64px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -706,7 +705,6 @@ li {
   .wp-pagenavi {
     font-family: "M PLUS 1p", sans-serif;
     font-weight: 700;
-    padding-bottom: 32px;
     justify-content: space-between;
     margin-top: 106.5px;
   }
@@ -718,7 +716,8 @@ li {
 }
 .wp-pagenavi .pages {
   color: #707070;
-  padding-right: 1.5rem; /*以下は画面幅が1024px以上になったら適応される*/
+  padding-right: 1.5rem;
+  /*以下は画面幅が1024px以上になったら適応される*/
   /*以下は画面幅が0~1024pxで適応される*/
   /*以下は画面幅が0~768px以下になったら適応される*/
 }

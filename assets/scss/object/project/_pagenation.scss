@@ -2,7 +2,6 @@
 
 //ページネーション
 .wp-pagenavi {
-    padding-bottom: 64px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,7 +10,6 @@
 
     @include breakpoint(m) {
         @include secondary-bold;
-        padding-bottom: 32px;
         justify-content: space-between;
         margin-top: 106.5px;
     }
