@@ -475,6 +475,24 @@ li {
   opacity: 0.7;
 }
 
+.p-sideMenu__lists a {
+  font-size: 2.4rem;
+  font-family: "M PLUS 1p", sans-serif;
+  font-weight: 700;
+  padding-bottom: 32px;
+  display: block;
+}
+
+.p-sideMenu__subList {
+  padding-left: 20px;
+}
+.p-sideMenu__subList a {
+  padding-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 400;
+  padding-bottom: 20px;
+}
+
 .c-searchBox {
   border: 1px solid #707070;
   border-radius: 10px;

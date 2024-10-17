@@ -10,9 +10,9 @@
                                         'menu' => 'categorymenu',  // Replace with your menu name
                                         'container' => false,
                                         'menu_class' => 'p-sideMenu__lists',  // CSS class for the menu ul element
-                                        'sideMenu_li_class' => 'p-sideMenu__list',
-                                        'submenu_li_class' => 'p-sideMenu__item', // サブメニューli要素のCSSクラス
-                                        'a_class' => 'p-sideMenu__link'
+                                        'sideMenu_li_class' => 'p-sideMenu__list', // メニューli要素のCSSクラス
+                                        /* 'submenu_li_class' => 'p-sideMenu__item', // サブメニューli要素のCSSクラス */
+                                        'submenu_ul_class' => 'p-sideMenu__subList' // サブメニューul要素のCSSクラス
                                 );
                                 // Display the custom menu
                                 wp_nav_menu($side_menu_args);
