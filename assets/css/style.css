@@ -11,7 +11,7 @@ body {
   font-weight: 400;
   color: #3C2A10;
   background-color: #FFFDFA;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 iframe {
