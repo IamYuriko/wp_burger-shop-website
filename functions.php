@@ -27,6 +27,10 @@ add_action('wp_enqueue_scripts', 'my_stylesheets');
 function my_setup()
 {
     /* add_theme_support('menus'); /*メニュー*/
+    register_nav_menus(array(
+        'footermenu' => 'フッターメニュー',
+        'categorymenu' => 'サイドメニュー'
+    ));
     add_theme_support('post-thumbnails'); /* アイキャッチ画像 */
     add_theme_support('automatic-feed-links'); /* RSSフィード */
     add_theme_support('title-tag'); /* タイトルタグ自動生成 */
@@ -125,8 +129,3 @@ function add_class_on_submenu($classes, $args)
     return $classes;
 }
 add_filter('nav_menu_submenu_css_class', 'add_class_on_submenu', 10, 2);
-
-register_nav_menus(array(
-    'footermenu' => 'フッターメニュー',
-    'categorymenu' => 'サイドメニュー'
-));

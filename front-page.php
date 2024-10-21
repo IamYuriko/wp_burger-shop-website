@@ -13,17 +13,6 @@
                                 Out</h2>
                             <span class="p-menu__line c-line c-line--m"></span>
                         </section>
-                        <!-- <?php
-                                // Define arguments for wp_nav_menu
-                                $menu_args = array(
-                                    'menu' => 'takeoutmenu',  // Replace with your menu name
-                                    'container' => false,
-                                    'menu_class' => 'p-menu__container',  // CSS class for the menu ul element
-                                );
-
-                                // Display the custom menu
-                                wp_nav_menu($menu_args);
-                                ?> -->
 
                         <div class="p-menu__contents">
                             <a class="p-menu__link" href="<?php echo esc_url(get_category_link(get_cat_ID('Take Out'))); ?>">
@@ -44,24 +33,12 @@
                                 </dl>
                             </a>
                         </div>
-
                     </div>
                     <div class="p-menu__eatIn c-bgImage c-bgImage--eatIn c-flex c-flex--column">
                         <section class="p-menu__wrapper">
                             <h2 class="p-menu__title c-title c-title--xl">Eat In</h2>
                             <span class="p-menu__line c-line c-line--m"></span>
                         </section>
-                        <!-- <?php
-                                // Define arguments for wp_nav_menu
-                                $menu_args = array(
-                                    'menu' => 'eatinmenu',  // Replace with your menu name
-                                    'container' => false,
-                                    'menu_class' => 'p-menu__container',  // CSS class for the menu ul element
-                                );
-
-                                // Display the custom menu
-                                wp_nav_menu($menu_args);
-                                ?> -->
                         <div class="p-menu__contents">
                             <a class="p-menu__link" href="<?php echo esc_url(get_category_link(get_cat_ID('Eat In'))); ?>">
                                 <dl class="p-menu__container">
