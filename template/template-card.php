@@ -6,7 +6,7 @@
                 <?php if (has_post_thumbnail()): ?>
                     <?php the_post_thumbnail('full', array('class' => 'p-card__image c-image')); ?>
                 <?php else: ?>
-                    <img class="c-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/pc-card_archive@2x.jpg" alt="no-image">
+                    <img class="c-image" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/pc-card_archive@2x.jpg'); ?>" alt="no-image">
                 <?php endif; ?>
                 <div class="p-card__container">
                     <h2 class="p-card__title c-heading c-heading--xl"><?php the_title(); ?></h2>
