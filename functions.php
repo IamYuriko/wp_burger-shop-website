@@ -35,6 +35,7 @@ function my_setup()
     add_theme_support('title-tag'); /* タイトルタグ自動生成 */
     add_theme_support('custom-background'); /*背景を管理画面から変更*/
     add_theme_support('custom-header'); /*ヘッダー画像を管理画面から変更*/
+    add_theme_support('appearance-tools'); /*外観ツール*/
     add_theme_support('responsive-embeds'); /*レスポンシブ埋め込み*/
     add_theme_support('align-wide'); /*ブロックエディタで幅広・全幅の対応*/
     add_theme_support('custom-logo'); /*カスタムロゴ*/
@@ -45,46 +46,8 @@ function my_setup()
         'gallery',
         'caption',
     ));
-
-    add_theme_support('wp-block-styles'); /*テーマにブロックエディタのサポートを追加*/
-    add_theme_support('editor-styles'); //独自のエディタースタイルを有効にする
-    add_editor_style(get_stylesheet_directory_uri() . './assets/css/editor-style.css'); //css読み込み
-
-    register_block_pattern( //ブロックパターン
-        '',
-        array(
-            'title'       => '',
-            'description' => '',
-            'content'     => ''
-        )
-    );
-
-    //独自のブロックスタイルを追加
-    register_block_style(
-        'core/quote', //ブロック名
-        array(
-            'name'  => 'bg-grey',
-            'label' => 'グレー背景'
-        )
-    );
-
-    register_block_style(
-        'core/code', //ブロック名
-        array(
-            'name'  => 'bg-grey',
-            'label' => 'グレー背景'
-        )
-    );
-
-    register_block_style(
-        'core/button', //ブロック名
-        array(
-            'name'  => 'bg-pink',
-            'label' => '指定カラー'
-        )
-    );
+    add_action('after_setup_theme', 'my_setup');
 }
-add_action('after_setup_theme', 'my_setup');
 
 
 //カスタムフィールドでフロントページ内マップ部分（アクセス）を管理

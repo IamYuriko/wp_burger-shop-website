@@ -25,25 +25,3 @@
         opacity: .7;
     }
 }
-
-
-.p-sideMenu__lists {
-    a {
-    font-size: 2.4rem;
-    @include secondary-bold;
-    padding-bottom: 32px;
-    display: block;
-    }
-} 
-
-.p-sideMenu__subList {
-    padding-left: 20px;
-
-    a {
-        padding-bottom: 20px;
-        font-size: 2rem;
-        font-weight: 400;
-        padding-bottom: 20px;
-    }
-} 
-
