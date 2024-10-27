@@ -18,5 +18,4 @@
         </section>
     <?php endwhile; ?>
 <?php else : ?>
-    <p>お探しの記事は見つかりませんでした。</p>
 <?php endif; ?>

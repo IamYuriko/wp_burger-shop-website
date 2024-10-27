@@ -6,7 +6,6 @@
                                 <h2 class="p-sideMenu__title c-title c-title--s u-hide--tab">Menu</h2>
                                 <?php
                                 wp_nav_menu(array(
-                                        'menu' => 'categorymenu',
                                         'theme_location' => 'categorymenu',
                                         'container' => false,
                                         'menu_class' => 'p-sideMenu__lists',  // CSS class for the menu ul element

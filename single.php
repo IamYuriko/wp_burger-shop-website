@@ -2,14 +2,22 @@
 
 <main class="l-main">
     <article class="l-contents">
-        <section class="p-fv-single c-mv c-mv-single">
+        <section class="p-fv-single c-mv c-mv-single" style="background-image: url('<?php
+                                                                                    if (has_post_thumbnail()) :
+                                                                                        echo esc_url(get_the_post_thumbnail_url()); // アイキャッチ画像のURLを取得
+                                                                                    else:
+                                                                                        echo esc_url(get_template_directory_uri() . '/assets/images/pc-mv_single@2x.jpg'); // デフォルト画像のURLを指定
+                                                                                    endif;
+                                                                                    ?>');">
             <h1 class="p-fv-single__title c-heading c-heading--xxxl"><?php the_title(); ?></h1>
         </section>
         <div class="l-contents--single">
             <?php if (have_posts()) : ?>
-                <?php while (have_posts()) : the_post();
-                    the_content();
-                ?>
+                <?php while (have_posts()) : the_post(); ?>
+                    <div <?php post_class(); ?>>
+                        <?php the_content(); ?>
+                    </div>
+                    <?php wp_link_pages(); ?>
                 <?php endwhile; ?>
             <?php else : ?>
                 投稿がありません。

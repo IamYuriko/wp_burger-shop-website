@@ -11,7 +11,7 @@
             <section class="p-intro-archive">
                 <h2 class="search-result">
                     <!-- 検索結果件数をメインクエリから取得し表示 -->
-                    「<?php the_search_query(); ?>」の検索結果：<?php echo $wp_query->found_posts; ?>件
+                    「<?php the_search_query(); ?>」の検索結果：<?php echo $wp_query->found_posts; ?>件の検索結果が見つかりました。
                 </h2>
             </section>
             <!-- テンプレート呼び出し -->

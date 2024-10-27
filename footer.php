@@ -3,7 +3,6 @@
         <div class="l-footer__contents">
             <?php
             wp_nav_menu(array(
-                'menu' => 'footermenu',
                 'theme_location' => 'footermenu',
                 'container' => false,
                 'menu_class' => 'l-footer__menu c-flex c-flex--center',  // CSS class for the menu ul element
