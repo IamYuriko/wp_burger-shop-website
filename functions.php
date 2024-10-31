@@ -100,7 +100,6 @@ function save_card_section_data($post_id)
 add_action('save_post', 'save_card_section_data');
 
 
-
 // wp_nav_menuの<li>にクラスを追加する関数
 function add_class_on_li($classes, $item, $args)
 {
@@ -128,3 +127,16 @@ function add_class_on_submenu($classes, $args)
     return $classes;
 }
 add_filter('nav_menu_submenu_css_class', 'add_class_on_submenu', 10, 2);
+
+
+//検索キーワードを含む投稿ページのみを表示させる
+function custom_search_query($query)
+{
+    if ($query->is_search && !is_admin()) {
+        // 投稿を検索対象にする
+        $query->set('post_type', array('post'));
+        $query->set('s', esc_sql($query->get('s')));
+    }
+    return $query;
+}
+add_filter('pre_get_posts', 'custom_search_query');
